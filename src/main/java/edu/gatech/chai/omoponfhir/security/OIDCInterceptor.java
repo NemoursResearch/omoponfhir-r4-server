@@ -48,7 +48,7 @@ public class OIDCInterceptor extends InterceptorAdapter {
 	private String authBasic;
 	private String authBearer;
 
-	private static String authKeyName = "smartOnFhirAuth";
+	public static String authKeyName = "smartOnFhirAuth";
 
 	public OIDCInterceptor() {
 		String url = System.getenv("SMART_INTROSPECTURL");

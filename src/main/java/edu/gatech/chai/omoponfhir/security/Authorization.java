@@ -247,7 +247,7 @@ public class Authorization {
 		if (resourceName == null) {
 			Map<String, String[]> params = theRequestDetails.getParameters();
 			String[] page_ = params.get("_getpages");
-			if (page_.length > 0) {
+			if (page_ != null && page_.length > 0) {
 				String page_id = page_[0];
 				if (page_id != null && !page_id.isEmpty()) {
 					// This is page loading. Then, it means the original request passed.
@@ -373,7 +373,8 @@ public class Authorization {
 
 			if (resourceOperationType == RestOperationTypeEnum.READ
 					|| resourceOperationType == RestOperationTypeEnum.VREAD
-					|| resourceOperationType == RestOperationTypeEnum.SEARCH_TYPE) {
+					|| resourceOperationType == RestOperationTypeEnum.SEARCH_TYPE
+					|| resourceOperationType == RestOperationTypeEnum.EXTENDED_OPERATION_SERVER) {
 				if ((scopeDetail[1].equalsIgnoreCase("*.read") || scopeDetail[1].equalsIgnoreCase("*.*"))) {
 					return true;
 				} else {

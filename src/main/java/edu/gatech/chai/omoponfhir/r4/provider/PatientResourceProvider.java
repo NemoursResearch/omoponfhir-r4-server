@@ -368,7 +368,7 @@ public class PatientResourceProvider implements IResourceProvider {
 
 		return new MethodOutcome();
 	}
-
+	
 	/**
 	 * $everything operation for a single patient.
 	 */
