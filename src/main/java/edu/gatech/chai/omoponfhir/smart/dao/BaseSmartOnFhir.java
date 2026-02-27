@@ -6,7 +6,6 @@ import java.sql.SQLException;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.sqlite.SQLiteConfig;
 
 public class BaseSmartOnFhir {
 	final static Logger logger = LoggerFactory.getLogger(BaseSmartOnFhir.class);
@@ -20,10 +19,13 @@ public class BaseSmartOnFhir {
 		try {
 			Class.forName("org.sqlite.JDBC");
 			conn = DriverManager.getConnection(url);
+			logger.debug("Connected to database");
 		} catch (SQLException e) {
-			logger.error(e.getMessage(), e);
+			logger.debug(e.getMessage());
+			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			logger.error(e.getMessage(), e);
+			logger.debug(e.getMessage());
+			e.printStackTrace();
 		}
 
 		return conn;
