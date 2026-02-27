@@ -44,6 +44,25 @@
 		<param-value>http://localhost:8080/</param-value>
 	</context-param>
 	<servlet>
+		<servlet-name>BulkDataServices</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<init-param>
+			<param-name>contextClass</param-name>
+			<param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>org.nemourschildrensresearch.ctr_fhir.config.BulkDataServerConfig</param-value>
+		</init-param>
+		<load-on-startup>2</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BulkDataServices</servlet-name>
+		<url-pattern>/bulkdata/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
 		<servlet-name>SmartAuthServices</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet
 		</servlet-class>
