@@ -306,6 +306,12 @@
 			<artifactId>omoponfhir-omopv5-r4-mapping</artifactId>
 			<version>${omoponfhir_mapping_version}</version>
 		</dependency>
+		<dependency>
+			<groupId>org.nemourschildrensresearch.ctr_fhir</groupId>
+			<artifactId>omoponfhir-smart-bulk-data-server</artifactId>
+			<version>0.0.1</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>jakarta.interceptor</groupId>
